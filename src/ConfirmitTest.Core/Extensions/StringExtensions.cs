@@ -1,4 +1,4 @@
-﻿namespace ConfirmitTest.Core
+﻿namespace ConfirmitTest.Core.Extensions
 {
     public static class StringExtensions
     {

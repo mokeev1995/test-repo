@@ -4,23 +4,23 @@ namespace ConfirmitTest.Shop.Common
 {
     public abstract class CartItemInheritorBase : ICartItem
     {
-        private readonly ICartItem _cartItem;
+        protected readonly ICartItem CartItem;
 
         protected CartItemInheritorBase(ICartItem cartItem)
         {
-            _cartItem = cartItem;
+            CartItem = cartItem;
         }
 
         public Product Product
         {
-            get => _cartItem.Product;
-            set => _cartItem.Product = value;
+            get => CartItem.Product;
+            set => CartItem.Product = value;
         }
 
         public uint Count
         {
-            get => _cartItem.Count;
-            set => _cartItem.Count = value;
+            get => CartItem.Count;
+            set => CartItem.Count = value;
         }
 
         public abstract decimal GetCost();

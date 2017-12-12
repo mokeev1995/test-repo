@@ -34,23 +34,13 @@ namespace ConfirmitTest.App
             Console.WriteLine(format);
         }
 
-        public void WriteMenuItems(IEnumerable<string> items)
-        {
-            RestoreMessage();
-
-            var currentItems = items.ToArray();
-
-            for (var i = 0; i < currentItems.Length; i++)
-                Console.WriteLine($"{i}. {currentItems[i]}");
-        }
-
-        public int GetIntResponse()
+        public int? GetIntResponse()
         {
             var resStr = Console.ReadLine();
             if (int.TryParse(resStr ?? "-1", out var res))
                 return res;
 
-            return -1;
+            return null;
         }
 
         public string GetStringResponse()

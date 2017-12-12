@@ -24,6 +24,7 @@ namespace ConfirmitTest.App
         private static void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<ConsoleMenu>()
+                .AddTransient(typeof(IOutputListManager<>), typeof(OutputListManager<>))
                 .AddSingleton(typeof(IHistoryManager<>), typeof(HistoryManager<>));
 
             services

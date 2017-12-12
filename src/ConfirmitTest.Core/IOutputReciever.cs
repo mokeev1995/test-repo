@@ -8,9 +8,8 @@ namespace ConfirmitTest.Core
         void WriteLine(string format, params object[] args);
         void Write(string format);
         void WriteLine(string format);
-        void WriteMenuItems(IEnumerable<string> items);
         string GetStringResponse();
-        int GetIntResponse();
+        int? GetIntResponse();
         void WriteError(string message);
         void WriteInfo(string message);
         void WriteWarn(string message);

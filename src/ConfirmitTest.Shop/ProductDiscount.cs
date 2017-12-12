@@ -5,20 +5,30 @@ namespace ConfirmitTest.Shop
 {
     public class ProductDiscount : CartItemInheritorBase
     {
+        private readonly uint _discountValue;
+
         public ProductDiscount(ICartItem cartItem, uint discountValue)
             : base(cartItem)
         {
-            throw new NotImplementedException();
+            _discountValue = discountValue;
         }
 
         public override decimal GetCost()
         {
-            throw new NotImplementedException();
+            var cost = CartItem.GetCost();
+            return cost - GetDiscountValue(cost);
+        }
+        
+        private decimal GetDiscountValue(decimal currentCost)
+        {
+            const int maxPersentageValue = 100;
+
+            return _discountValue * currentCost / maxPersentageValue;
         }
 
         public override ICartItem GetState()
         {
-            throw new NotImplementedException();
+            return new ProductDiscount(CartItem, _discountValue);
         }
     }
 }

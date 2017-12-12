@@ -8,6 +8,7 @@ namespace ConfirmitTest.Repositories
         {
             return services
                 .AddScoped<IProductRepository, ProductRepository>()
+                .AddScoped<ICartCouponRepository, CartCouponRepository>()
                 .AddScoped<IProductCouponRepository, ProductCouponRepository>();
         }
     }

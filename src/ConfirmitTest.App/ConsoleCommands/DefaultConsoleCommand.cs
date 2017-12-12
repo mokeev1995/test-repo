@@ -8,10 +8,16 @@ namespace ConfirmitTest.App.ConsoleCommands
     {
         private readonly IConsoleCommand[] _consoleCommands;
         private readonly IOutputReciever _outputReciever;
+        private readonly IOutputListManager<IConsoleCommand> _listManager;
 
-        public DefaultConsoleCommand(IOutputReciever outputReciever, IEnumerable<IConsoleCommand> consoleCommands)
+        public DefaultConsoleCommand(
+            IOutputReciever outputReciever, 
+            IEnumerable<IConsoleCommand> consoleCommands,
+            IOutputListManager<IConsoleCommand> listManager
+        )
         {
             _outputReciever = outputReciever;
+            _listManager = listManager;
             _consoleCommands = consoleCommands?.ToArray();
         }
 
@@ -23,8 +29,7 @@ namespace ConfirmitTest.App.ConsoleCommands
             {
                 RefreshScreen();
                 WriteMenu();
-                var input = GetInput();
-                var command = GetCommand(input);
+                var command = GetCommand();
                 if (command == null)
                 {
                     RefreshScreen();
@@ -45,23 +50,17 @@ namespace ConfirmitTest.App.ConsoleCommands
             _outputReciever.ClearScreen();
         }
 
-        private ICommand GetCommand(int input)
+        private ICommand GetCommand()
         {
-            if (input < 0 || input > _consoleCommands.Length - 1)
-                return null;
-            return _consoleCommands[input];
-        }
-
-        private int GetInput()
-        {
-            return _outputReciever.GetIntResponse();
+            return _listManager.GetSelectedItem();
         }
 
         private void WriteMenu()
         {
             _outputReciever.WriteLine(Title);
-            var titles = _consoleCommands.Select(command => command.Title);
-            _outputReciever.WriteMenuItems(titles);
+            _listManager.SetItems(_consoleCommands);
+            _listManager.SetItemToString(command => command.Title);
+            _listManager.PrintItems();
         }
     }
 }
