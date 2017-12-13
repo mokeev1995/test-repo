@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using ConfirmitTest.Core;
+using ConfirmitTest.Core.Extensions;
 
 namespace ConfirmitTest.App.ConsoleCommands
 {
@@ -25,39 +26,31 @@ namespace ConfirmitTest.App.ConsoleCommands
 
         public void Execute()
         {
+            // exit when throwed exception (MenuExitException)
             while (true)
             {
-                RefreshScreen();
+                _outputReciever.ClearScreen();
                 WriteMenu();
-                var command = GetCommand();
-                if (command == null)
+
+                _outputReciever.Write("\nYour choise: ");
+
+                var command = _listManager.GetSelectedItem();
+                if (command.IsNull())
                 {
-                    RefreshScreen();
-                    WriteWrongSelectionMessage();
+                    _outputReciever.ClearScreen();
+                    _outputReciever.WriteError(
+                        "You've selected a nonexistent menu item! Try to select another one!"
+                    );
                     continue;
                 }
+
                 command.Execute();
             }
         }
 
-        private void WriteWrongSelectionMessage()
-        {
-            _outputReciever.WriteError("You've selected a nonexistent menu item! Try to select another one!");
-        }
-
-        private void RefreshScreen()
-        {
-            _outputReciever.ClearScreen();
-        }
-
-        private ICommand GetCommand()
-        {
-            return _listManager.GetSelectedItem();
-        }
-
         private void WriteMenu()
         {
-            _outputReciever.WriteLine(Title);
+            _outputReciever.WriteLine($"{Title}\n");
             _listManager.SetItems(_consoleCommands);
             _listManager.SetItemToString(command => command.Title);
             _listManager.PrintItems();

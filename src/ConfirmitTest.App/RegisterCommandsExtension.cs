@@ -17,9 +17,13 @@ namespace ConfirmitTest.App
             return services
                 .AddSingleton<IConsoleCommand, AddToCartConsoleCommand>()
                 .AddSingleton<IConsoleCommand, RemoveFromCartConsoleCommand>()
-                .AddSingleton<IConsoleCommand, AddCartDiscountConsoleCommand>()
-                .AddSingleton<IConsoleCommand, AddProductDiscountConsoleCommand>()
-                .AddSingleton<IConsoleCommand, PrintCartConsoleCommand>()
+                .AddSingleton<IConsoleCommand, IncreaseProductCount>()
+                .AddSingleton<IConsoleCommand, DecreaseProductCount>()
+                .AddSingleton<IConsoleCommand, ApplyCartDiscountConsoleCommand>()
+                .AddSingleton<IConsoleCommand, ApplyProductDiscountConsoleCommand>()
+                .AddSingleton<IConsoleCommand, PrintCheckConsoleCommand>()
+                .AddSingleton<IConsoleCommand, UndoConsoleCommand>()
+                .AddSingleton<IConsoleCommand, RedoConsoleCommand>()
                 .AddTransient<IConsoleCommand, ExitConsoleCommand>();
         }
     }

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using ConfirmitTest.Core;
 using ConfirmitTest.Entities;
 
@@ -12,8 +11,6 @@ namespace ConfirmitTest.Shop
         void AddProductDiscount(Product product, uint discountValue);
 
         void RemoveProduct(Product product);
-        void RemoveCartDiscount(uint discountValue);
-        void RemoveProductDiscount(Product product, uint discountValue);
 
         void Undo(uint count = 1);
         void Redo(uint count = 1);
@@ -59,20 +56,6 @@ namespace ConfirmitTest.Shop
             var current = GetCurrentCartState();
             var item = current.GetCartItem(product);
             current.RemoveProduct(item);
-        }
-
-        public void RemoveCartDiscount(uint discountValue)
-        {
-            var current = GetCurrentCartState();
-            var cartWithDiscount = new CartWithoutDiscount(current, discountValue);
-            _cartHistory.SaveNextState(cartWithDiscount);
-        }
-
-        public void RemoveProductDiscount(Product product, uint discountValue)
-        {
-            var current = GetCurrentCartState();
-            var item = current.GetCartItem(product);
-            current.ReplaceProduct(new ProductWithoutDiscount(item, discountValue));
             _cartHistory.SaveNextState(current);
         }
 

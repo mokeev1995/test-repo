@@ -1,16 +1,15 @@
-﻿using System.Linq;
-using ConfirmitTest.Core;
+﻿using ConfirmitTest.Core;
 using ConfirmitTest.Shop;
 
 namespace ConfirmitTest.App.ConsoleCommands
 {
-    public class PrintCartConsoleCommand : IConsoleCommand
+    public class PrintCheckConsoleCommand : IConsoleCommand
     {
         private readonly IOutputReciever _outputReciever;
         private readonly ICartService _cartService;
         private readonly IOutputListManager<ICartItem> _listManager;
 
-        public PrintCartConsoleCommand(
+        public PrintCheckConsoleCommand(
             IOutputReciever outputReciever,
             ICartService cartService,
             IOutputListManager<ICartItem> listManager

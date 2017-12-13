@@ -6,13 +6,13 @@ using ConfirmitTest.Shop;
 
 namespace ConfirmitTest.App.ConsoleCommands
 {
-    public class AddCartDiscountConsoleCommand : IConsoleCommand
+    public class ApplyCartDiscountConsoleCommand : IConsoleCommand
     {
         private readonly IOutputReciever _outputReciever;
         private readonly ICartService _cartService;
         private readonly ICartCouponRepository _cartCouponRepository;
 
-        public AddCartDiscountConsoleCommand(
+        public ApplyCartDiscountConsoleCommand(
             IOutputReciever outputReciever, 
             ICartService cartService,
             ICartCouponRepository cartCouponRepository
