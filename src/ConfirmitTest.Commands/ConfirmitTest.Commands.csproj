@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ConfirmitTest.Core\ConfirmitTest.Core.csproj" />
+    <ProjectReference Include="..\ConfirmitTest.Entities\ConfirmitTest.Entities.csproj" />
+    <ProjectReference Include="..\ConfirmitTest.Repositories\ConfirmitTest.Repositories.csproj" />
+    <ProjectReference Include="..\ConfirmitTest.Shop\ConfirmitTest.Shop.csproj" />
+  </ItemGroup>
+
+</Project>

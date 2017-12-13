@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using ConfirmitTest.Core;
 using ConfirmitTest.Core.Extensions;
 
-namespace ConfirmitTest.App
+namespace ConfirmitTest.Core
 {
     public interface IOutputListManager<T> 
         where T : class

@@ -1,4 +1,4 @@
-﻿using ConfirmitTest.App.ConsoleCommands;
+﻿using ConfirmitTest.Commands;
 using ConfirmitTest.Core;
 using ConfirmitTest.Repositories;
 using ConfirmitTest.Shop;

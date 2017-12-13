@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ConfirmitTest.Commands\ConfirmitTest.Commands.csproj" />
     <ProjectReference Include="..\ConfirmitTest.Core\ConfirmitTest.Core.csproj" />
     <ProjectReference Include="..\ConfirmitTest.Entities\ConfirmitTest.Entities.csproj" />
     <ProjectReference Include="..\ConfirmitTest.Repositories\ConfirmitTest.Repositories.csproj" />

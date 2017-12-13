@@ -2,14 +2,14 @@
 using ConfirmitTest.Core;
 using ConfirmitTest.Shop;
 
-namespace ConfirmitTest.App.ConsoleCommands
+namespace ConfirmitTest.Commands
 {
-    public class UndoConsoleCommand : IConsoleCommand
+    public class RedoConsoleCommand : IConsoleCommand
     {
         private readonly IOutputReciever _outputReciever;
         private readonly ICartService _cartService;
 
-        public UndoConsoleCommand(
+        public RedoConsoleCommand(
             IOutputReciever outputReciever,
             ICartService cartService
         )
@@ -21,13 +21,12 @@ namespace ConfirmitTest.App.ConsoleCommands
         public void Execute()
         {
             _outputReciever.ClearScreen();
-
-            _outputReciever.Write("How much commands do we need to rollback? [1] ");
+            _outputReciever.Write("How much commands do we need to do again? [1] ");
             var count = _outputReciever.GetIntResponse() ?? 1;
-            _cartService.Undo(Convert.ToUInt32(count));
-            _outputReciever.WriteInfo($"Up to {count} command(-s) was successfully reverted.");
+            _cartService.Redo(Convert.ToUInt32(count));
+            _outputReciever.WriteInfo($"Up to {count} command(-s) was successfully redone.");
         }
 
-        public string Title { get; } = "Rollback last N actions";
+        public string Title { get; } = "Revert rollback last N actions";
     }
 }

@@ -4,7 +4,7 @@ using ConfirmitTest.Entities;
 using ConfirmitTest.Repositories;
 using ConfirmitTest.Shop;
 
-namespace ConfirmitTest.App.ConsoleCommands
+namespace ConfirmitTest.Commands
 {
     public class ApplyProductDiscountConsoleCommand : IConsoleCommand
     {

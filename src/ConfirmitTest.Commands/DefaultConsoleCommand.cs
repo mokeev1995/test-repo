@@ -3,7 +3,7 @@ using System.Linq;
 using ConfirmitTest.Core;
 using ConfirmitTest.Core.Extensions;
 
-namespace ConfirmitTest.App.ConsoleCommands
+namespace ConfirmitTest.Commands
 {
     public class DefaultConsoleCommand : IDefaultConsoleCommand
     {

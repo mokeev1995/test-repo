@@ -2,7 +2,7 @@
 using ConfirmitTest.Core.Extensions;
 using ConfirmitTest.Shop;
 
-namespace ConfirmitTest.App.ConsoleCommands
+namespace ConfirmitTest.Commands
 {
     public class RemoveFromCartConsoleCommand : IConsoleCommand
     {

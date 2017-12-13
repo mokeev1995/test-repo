@@ -1,7 +1,7 @@
 ﻿using ConfirmitTest.Core;
 using ConfirmitTest.Core.Exceptions;
 
-namespace ConfirmitTest.App.ConsoleCommands
+namespace ConfirmitTest.Commands
 {
     public class ExitConsoleCommand : IDefaultConsoleCommand
     {

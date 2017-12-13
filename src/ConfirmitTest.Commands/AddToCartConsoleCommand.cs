@@ -1,11 +1,10 @@
-﻿using System.Linq;
-using ConfirmitTest.Core;
+﻿using ConfirmitTest.Core;
 using ConfirmitTest.Core.Extensions;
 using ConfirmitTest.Entities;
 using ConfirmitTest.Repositories;
 using ConfirmitTest.Shop;
 
-namespace ConfirmitTest.App.ConsoleCommands
+namespace ConfirmitTest.Commands
 {
     public class AddToCartConsoleCommand : IConsoleCommand
     {

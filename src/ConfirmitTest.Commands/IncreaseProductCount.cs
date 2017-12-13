@@ -3,15 +3,15 @@ using ConfirmitTest.Core;
 using ConfirmitTest.Core.Extensions;
 using ConfirmitTest.Shop;
 
-namespace ConfirmitTest.App.ConsoleCommands
+namespace ConfirmitTest.Commands
 {
-    public class DecreaseProductCount : IConsoleCommand
+    public class IncreaseProductCount : IConsoleCommand
     {
         private readonly IOutputReciever _outputReciever;
         private readonly ICartService _cartService;
         private readonly IOutputListManager<ICartItem> _listManager;
 
-        public DecreaseProductCount(
+        public IncreaseProductCount(
             IOutputReciever outputReciever,
             ICartService cartService,
             IOutputListManager<ICartItem> listManager
@@ -40,12 +40,12 @@ namespace ConfirmitTest.App.ConsoleCommands
                 return;
             }
 
-            _outputReciever.Write("\nHow much products do we need to remove from cart? [1] ");
+            _outputReciever.Write("\nHow much products do we need to add to cart? [1] ");
             var count = _outputReciever.GetIntResponse() ?? 1;
 
             if (count < 1)
             {
-                _outputReciever.WriteError("Can't remove less than 1 product.");
+                _outputReciever.WriteError("Can't add less than 1 product.");
                 return;
             }
 
@@ -54,6 +54,6 @@ namespace ConfirmitTest.App.ConsoleCommands
             _outputReciever.WriteInfo($"Added {count} product(-s).");
         }
 
-        public string Title { get; } = "Decrease product count.";
+        public string Title { get; } = "Increase product count.";
     }
 }

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2010
+VisualStudioVersion = 15.0.27130.2003
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConfirmitTest.App", "src\ConfirmitTest.App\ConfirmitTest.App.csproj", "{1B2BE4A0-CE26-4E4A-9146-1FD7F25D31FB}"
 EndProject
@@ -16,6 +16,14 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConfirmitTest.Repositories", "src\ConfirmitTest.Repositories\ConfirmitTest.Repositories.csproj", "{CAF7C698-D7BD-4CF6-828E-C46DCAE34E88}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConfirmitTest.Shop", "src\ConfirmitTest.Shop\ConfirmitTest.Shop.csproj", "{27B058E1-E287-4DEE-A8C5-4E62DA6F0AC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfirmitTest.Commands", "src\ConfirmitTest.Commands\ConfirmitTest.Commands.csproj", "{1B6F4A27-A729-488F-B54C-09ECBB09D086}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfirmitTest.Tests.Commands", "tests\ConfirmitTest.Tests.Commands\ConfirmitTest.Tests.Commands.csproj", "{841E5EC9-1553-4B4E-87E5-4E795197C30C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfirmitTest.Tests.Shop", "tests\ConfirmitTest.Tests.Shop\ConfirmitTest.Tests.Shop.csproj", "{C1D6B9BB-647C-4CE3-93CA-A24F3A035850}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfirmitTest.Tests.Core", "tests\ConfirmitTest.Tests.Core\ConfirmitTest.Tests.Core.csproj", "{3ED53D1B-2B3F-44AC-804D-E46F99C669E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +51,22 @@ Global
 		{27B058E1-E287-4DEE-A8C5-4E62DA6F0AC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27B058E1-E287-4DEE-A8C5-4E62DA6F0AC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27B058E1-E287-4DEE-A8C5-4E62DA6F0AC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B6F4A27-A729-488F-B54C-09ECBB09D086}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B6F4A27-A729-488F-B54C-09ECBB09D086}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B6F4A27-A729-488F-B54C-09ECBB09D086}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B6F4A27-A729-488F-B54C-09ECBB09D086}.Release|Any CPU.Build.0 = Release|Any CPU
+		{841E5EC9-1553-4B4E-87E5-4E795197C30C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{841E5EC9-1553-4B4E-87E5-4E795197C30C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{841E5EC9-1553-4B4E-87E5-4E795197C30C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{841E5EC9-1553-4B4E-87E5-4E795197C30C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1D6B9BB-647C-4CE3-93CA-A24F3A035850}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1D6B9BB-647C-4CE3-93CA-A24F3A035850}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1D6B9BB-647C-4CE3-93CA-A24F3A035850}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1D6B9BB-647C-4CE3-93CA-A24F3A035850}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3ED53D1B-2B3F-44AC-804D-E46F99C669E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3ED53D1B-2B3F-44AC-804D-E46F99C669E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3ED53D1B-2B3F-44AC-804D-E46F99C669E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3ED53D1B-2B3F-44AC-804D-E46F99C669E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,6 +77,10 @@ Global
 		{546D73E9-8936-4404-BFF8-07C8003D769F} = {C14282AB-4628-470D-AC0F-1F240448ED76}
 		{CAF7C698-D7BD-4CF6-828E-C46DCAE34E88} = {C14282AB-4628-470D-AC0F-1F240448ED76}
 		{27B058E1-E287-4DEE-A8C5-4E62DA6F0AC5} = {C14282AB-4628-470D-AC0F-1F240448ED76}
+		{1B6F4A27-A729-488F-B54C-09ECBB09D086} = {C14282AB-4628-470D-AC0F-1F240448ED76}
+		{841E5EC9-1553-4B4E-87E5-4E795197C30C} = {AEB68493-3646-415E-83B1-48C7D1300876}
+		{C1D6B9BB-647C-4CE3-93CA-A24F3A035850} = {AEB68493-3646-415E-83B1-48C7D1300876}
+		{3ED53D1B-2B3F-44AC-804D-E46F99C669E4} = {AEB68493-3646-415E-83B1-48C7D1300876}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7C92E7F0-ED87-4F47-85EB-768798945739}

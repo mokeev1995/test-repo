@@ -1,17 +1,10 @@
-﻿using ConfirmitTest.App.ConsoleCommands;
-using ConfirmitTest.Core;
+﻿using ConfirmitTest.Core;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace ConfirmitTest.App
+namespace ConfirmitTest.Commands
 {
-    public static class RegisterCommandsExtension
+    public static class RegisterConsoleCommands
     {
-        public static IServiceCollection AddDefaultConsoleCommand<T>(this IServiceCollection services)
-            where T : class, IDefaultConsoleCommand
-        {
-            return services.AddSingleton<IDefaultConsoleCommand, T>();
-        }
-
         public static IServiceCollection AddConsoleCommands(this IServiceCollection services)
         {
             return services
