@@ -16,14 +16,14 @@ namespace ConfirmitTest.Core
 
         public void SaveNextState(T item)
         {
-            if (_currentIndex <= _data.Count)
+            if (_currentIndex + 1 >= _data.Count || _currentIndex == -1)
             {
                 _data.Add(item);
             }
             else
             {
-                _data[_currentIndex] = item;
-                ClearAfter(_currentIndex);
+                _data[_currentIndex + 1] = item;
+                ClearAfter(_currentIndex + 1);
             }
 
             _currentIndex++;
@@ -37,7 +37,9 @@ namespace ConfirmitTest.Core
         public T Undo(uint countToRollback)
         {
             var rollbackTo = _currentIndex - countToRollback;
-            _currentIndex = rollbackTo >= 0 ? (int) rollbackTo : 0;
+            _currentIndex = rollbackTo >= 0 
+                ? (int) rollbackTo 
+                : 0;
 
             return GetCurrentItem();
         }
@@ -55,8 +57,11 @@ namespace ConfirmitTest.Core
 
         private void ClearAfter(int currentIndex)
         {
+            const int countToIndexDiff = 1;
+
             currentIndex++;
-            _data.RemoveRange(currentIndex, _data.Count - currentIndex);
+
+            _data.RemoveRange(currentIndex, _data.Count - countToIndexDiff - currentIndex);
         }
     }
 }

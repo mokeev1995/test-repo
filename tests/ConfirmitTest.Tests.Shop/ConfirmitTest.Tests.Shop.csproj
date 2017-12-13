@@ -13,4 +13,9 @@
     <DotNetCliToolReference Include="dotnet-xunit" Version="2.3.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\ConfirmitTest.Shop\ConfirmitTest.Shop.csproj" />
+    <ProjectReference Include="..\ConfirmitTest.Tests.SharedClasses\ConfirmitTest.Tests.SharedClasses.csproj" />
+  </ItemGroup>
+
 </Project>
