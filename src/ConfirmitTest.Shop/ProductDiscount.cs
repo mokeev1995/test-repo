@@ -1,5 +1,4 @@
-﻿using System;
-using ConfirmitTest.Shop.Common;
+﻿using ConfirmitTest.Shop.Common;
 
 namespace ConfirmitTest.Shop
 {

@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\ConfirmitTest.Repositories\ConfirmitTest.Repositories.csproj" />
     <ProjectReference Include="..\..\src\ConfirmitTest.Shop\ConfirmitTest.Shop.csproj" />
     <ProjectReference Include="..\ConfirmitTest.Tests.SharedClasses\ConfirmitTest.Tests.SharedClasses.csproj" />
   </ItemGroup>

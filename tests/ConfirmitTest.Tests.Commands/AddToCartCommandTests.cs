@@ -5,16 +5,17 @@ using ConfirmitTest.Core;
 using ConfirmitTest.Entities;
 using ConfirmitTest.Repositories;
 using ConfirmitTest.Shop;
+using ConfirmitTest.Tests.SharedClasses;
 using Xunit;
 
 namespace ConfirmitTest.Tests.Commands
 {
-    public class AddToCartCommandTests : CommandTestBase
+    public class AddToCartCommandTests
     {
         [Fact]
         public void CommandTitleSet()
         {
-            var cmd = GetCommand(GetOutputReciever(), GetOutputReciever());
+            var cmd = GetCommand(CommonInstansesCreator.GetOutputReciever(), CommonInstansesCreator.GetOutputReciever());
 
             Assert.Equal("Add to cart.", cmd.Title);
         }
@@ -22,13 +23,13 @@ namespace ConfirmitTest.Tests.Commands
         [Fact]
         public void ProductJustAddedToCart()
         {
-            var commandReciever = GetOutputReciever();
-            var listMgrReciever = GetOutputReciever();
+            var commandReciever = CommonInstansesCreator.GetOutputReciever();
+            var listMgrReciever = CommonInstansesCreator.GetOutputReciever();
 
             listMgrReciever.GetIntResponses.Enqueue(0);
 
-            var productRepository = GetProductRepo();
-            var cartService = GetCartService();
+            var productRepository = CommonInstansesCreator.GetProductRepo();
+            var cartService = CommonInstansesCreator.GetCartService();
 
             var command = GetCommand(commandReciever, listMgrReciever, productRepository, cartService);
             command.Execute();
@@ -42,8 +43,8 @@ namespace ConfirmitTest.Tests.Commands
         [Fact]
         public void ProductJustAddedToCart_WrongItemSelection()
         {
-            var commandReciever = GetOutputReciever();
-            var listMgrReciever = GetOutputReciever();
+            var commandReciever = CommonInstansesCreator.GetOutputReciever();
+            var listMgrReciever = CommonInstansesCreator.GetOutputReciever();
 
             listMgrReciever.GetIntResponses.Enqueue(-1);
             
@@ -61,10 +62,10 @@ namespace ConfirmitTest.Tests.Commands
         )
         {
             return new AddToCartConsoleCommand(
-                productRepository ?? GetProductRepo(),
+                productRepository ?? CommonInstansesCreator.GetProductRepo(),
                 commandOutputReciever,
-                cartService ?? GetCartService(), 
-                GetOutputListManager<Product>(listManagerOutputReciever)
+                cartService ?? CommonInstansesCreator.GetCartService(),
+                CommonInstansesCreator.GetOutputListManager<Product>(listManagerOutputReciever)
             );
         }
     }

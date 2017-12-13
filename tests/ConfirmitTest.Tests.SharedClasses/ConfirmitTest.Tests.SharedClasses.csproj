@@ -5,7 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\ConfirmitTest.Commands\ConfirmitTest.Commands.csproj" />
     <ProjectReference Include="..\..\src\ConfirmitTest.Core\ConfirmitTest.Core.csproj" />
+    <ProjectReference Include="..\..\src\ConfirmitTest.Entities\ConfirmitTest.Entities.csproj" />
+    <ProjectReference Include="..\..\src\ConfirmitTest.Repositories\ConfirmitTest.Repositories.csproj" />
+    <ProjectReference Include="..\..\src\ConfirmitTest.Shop\ConfirmitTest.Shop.csproj" />
   </ItemGroup>
 
 </Project>
