@@ -10,6 +10,12 @@ using Xunit;
 
 namespace ConfirmitTest.Tests.Commands
 {
+
+    // NOTE FOR REVIEWER:
+    // This is command test example. 
+    // Others commands can be tested like that.
+
+
     public class AddToCartCommandTests
     {
         [Fact]
