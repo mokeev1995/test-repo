@@ -2,8 +2,10 @@
 
 ## Requirements
 
- - Visual Studio 2017 (>= 15.4) or Rider 2017.2 (or newer)
- - .Net Core 2.0 SDK (usually installed with VS2017)
+Project can be runned at all platforms supported by .Net Core (Win, Linux, macOS).
+
+ - (optional, code editing or viewing) Visual Studio 2017 (>= 15.4) or Rider 2017.2 (or newer) or Visual Studio Code with C# extensions.
+ - .Net Core 2.0 Runtime/SDK (usually installed with VS2017). Can be downloaded [here](https://www.microsoft.com/net/download/windows).
 
 ## How to run
 
